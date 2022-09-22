@@ -52,6 +52,15 @@ module.exports = {
       createdAt: new Date(),
       updatedAt: new Date(),
       userId:2
+    },
+        {
+          title:'Third Space',
+        description:'This is My Third Space',
+        backgroundColor:'#fff',
+        color:'#000',
+      createdAt: new Date(),
+      updatedAt: new Date(),
+      userId:3
     }
       ]
     )
@@ -68,7 +77,7 @@ module.exports = {
         {
           name:'Second Story',
         content:'This is My Second Story',
-      imageUrl:'https://unsplash.com/photos/jgT1sy3UTxE',
+      imageUrl:'https://images.unsplash.com/photo-1663529472419-ffdf8df3aeea?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2671&q=80',
       createdAt: new Date(),
       updatedAt: new Date(),
       spaceId:1
@@ -76,7 +85,7 @@ module.exports = {
         {
           name:'third Story',
         content:'This is My third Story',
-      imageUrl:'https://unsplash.com/photos/eBf3ZHnzJjA',
+      imageUrl:'https://images.unsplash.com/photo-1622450348974-edae201b4593?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2672&q=80',
       createdAt: new Date(),
       updatedAt: new Date(),
       spaceId:2
@@ -84,7 +93,7 @@ module.exports = {
         {
           name:'fourth Story',
         content:'This is My fourth Story',
-      imageUrl:'https://unsplash.com/photos/gQG_4OxlZYs',
+      imageUrl:'https://images.unsplash.com/photo-1599409636295-e3cf3538f212?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80',
       createdAt: new Date(),
       updatedAt: new Date(),
       spaceId:2
