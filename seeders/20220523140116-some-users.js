@@ -38,7 +38,7 @@ module.exports = {
         {
           title:'First Space',
         description:'This is My first Space',
-      backgroundColor:'#fff',
+      backgroundColor:'#ccc',
       color:'#000',
       createdAt: new Date(),
       updatedAt: new Date(),
@@ -47,21 +47,13 @@ module.exports = {
         {
           title:'Second Space',
         description:'This is My Second Space',
-        backgroundColor:'#fff',
+        backgroundColor:'#457dd4',
         color:'#000',
       createdAt: new Date(),
       updatedAt: new Date(),
       userId:2
     },
-        {
-          title:'Third Space',
-        description:'This is My Third Space',
-        backgroundColor:'#fff',
-        color:'#000',
-      createdAt: new Date(),
-      updatedAt: new Date(),
-      userId:3
-    }
+        
       ]
     )
     await queryInterface.bulkInsert(
