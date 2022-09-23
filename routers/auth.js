@@ -27,10 +27,11 @@ router.post("/login", async (req, res, next) => {
         message: "User with that email not found or password incorrect",
       });
     }
-    const space = Space.findOne({ where: { userId: user.id } });
+    const space = await Space.findOne({ where: { userId: user.id } });
     delete user.dataValues["password"]; // don't send back the password hash
     const token = toJWT({ userId: user.id });
-    return res.status(200).send({ space: space, token, user: user.dataValues });
+    const newUser ={...user.dataValues,space}
+    return res.status(200).send({space, token, user: newUser });
   } catch (error) {
     console.log(error);
     return res.status(400).send({ message: "Something went wrong, sorry" });
@@ -53,8 +54,8 @@ router.post("/signup", async (req, res) => {
     const newOne = await Space.create({
       title: `${name}'s space`,
       description: null,
-      backgroundColor: "#fff",
-      color: "#000",
+      backgroundColor: "#ffffff",
+      color: "#000000",
       userId: newUser.id,
     });
     delete newUser.dataValues["password"]; // don't send back the password hash
@@ -64,6 +65,7 @@ router.post("/signup", async (req, res) => {
     res
       .status(201)
       .json({ token, user: newUser.dataValues, space: newOne.dataValues });
+      console.log(newOne)
   } catch (error) {
     if (error.name === "SequelizeUniqueConstraintError") {
       return res
