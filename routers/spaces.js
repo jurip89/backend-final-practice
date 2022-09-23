@@ -15,7 +15,7 @@ router.get('/',async(req,res,next)=>{
         next(error)
     }
 })
-router.post('/',async(req,res,next)=>{
+router.post('/',authMiddleware,async(req,res,next)=>{
     try {
         const newOne = await Space.create(req.body);
          
@@ -37,12 +37,13 @@ router.get('/:id',async(req,res,next)=>{
     }
 })
 
-router.patch('/:id',authMiddleware,async(req,res,next)=>{
+router.put('/:id',authMiddleware,async(req,res,next)=>{
     const {id} = req.params;
     try {
         const theOne = await Space.findByPk(id)
         !theOne && res.status(400).send('Nothing here!')
         const betterOne = await theOne.update(req.body);
+        console.log(req.body)
         res.send(betterOne)       
     } catch (error) {
         next(error)
